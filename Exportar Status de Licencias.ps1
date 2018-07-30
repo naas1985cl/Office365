@@ -1,0 +1,1 @@
+﻿Get-Msoluser -all | Select-Object displayname, userprincipalname, usagelocation, Office, licenses | Format-table -Property * -AutoSize | Out-String -width 4096 | Out-File archivo.csv

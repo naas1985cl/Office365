@@ -1,0 +1,3 @@
+﻿Get-Mailbox -ResultSize unlimited | Select-Object UserPrincipalName, Identity, IsDirSynced, primarySMTPaddress, emailaddresses | Format-table -Property * -AutoSize | Out-String -width 4096 | Out-File ExportAllUPNSMTP.csv
+#Get-AzureADUser -all 1 | Select-Object UserPrincipalName, Identity, IsDirSynced, primarySMTPaddress, emailaddresses | Format-table -Property * -AutoSize | Out-String -width 4096 | Out-File ExportAllADUser.csv
+Get-MsolUser -All | Select-Object UserPrincipalName, DisplayName, Licenses, ProxyAddresses | Format-table -Property * -AutoSize | Out-String -width 4096 | Out-File ReporteLicenciamiento.csv
